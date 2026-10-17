@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masterclass gratuita de finanzas para empresarios | Aurora Capital</title>
+<meta name="description" content="En 2 horas, aprende a saber si tu empresa gana o solo factura. Masterclass gratuita en vivo por Zoom con el Eco. Fernando Nacimento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel: reemplazar PIXEL_ID por el ID del píxel de Aurora Capital -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','PIXEL_ID');
+fbq('track','PageView');
+</script>
+
+<style>
+:root{--navy:#0B2150;--navy2:#13306B;--yellow:#F9B51B;--wa:#1FAF55;--ink:#1B2333;--muted:#5B6578;--bg:#F5F7FB;--line:#E2E6EE}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+/* top */
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.top img{height:38px}
+.top a.btn{padding:10px 16px;font-size:14px}
+/* hero */
+.hero{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:48px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.pill{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:900;font-size:13px;letter-spacing:.5px;padding:6px 12px;border-radius:8px}
+.hero h1{font-size:44px;line-height:1.08;margin:16px 0 14px;font-weight:900}
+.hero h1 span{color:var(--yellow)}
+.hero p.sub{font-size:19px;color:#D7E0F3;margin:0 0 22px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px;padding:0;list-style:none}
+.facts li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:600}
+.hero .photo{position:relative}
+.hero .photo img{width:100%;border-radius:18px;display:block;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.hero .photo .tag{position:absolute;left:14px;right:14px;bottom:14px;background:#fff;color:var(--navy);border-left:6px solid var(--yellow);border-radius:10px;padding:10px 14px}
+.hero .photo .tag b{display:block;font-size:17px}
+.hero .photo .tag span{font-size:13px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--navy);font-weight:800;text-decoration:none;border:0;border-radius:12px;padding:16px 26px;font-size:17px;cursor:pointer}
+.btn:hover{filter:brightness(1.05)}
+/* sections */
+section{padding:56px 0}
+h2{font-size:32px;line-height:1.15;margin:0 0 10px;color:var(--navy);font-weight:900}
+.lead{font-size:17px;color:var(--muted);margin:0 0 28px;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.card .n{width:38px;height:38px;border-radius:10px;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:10px}
+.card h3{margin:0 0 6px;font-size:17px;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.pain{background:#fff}
+.pain ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;max-width:760px}
+.pain li{display:flex;gap:12px;font-size:17px}
+.pain li::before{content:"✗";color:#C0392B;font-weight:900}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.who .card.ok h3::before{content:"✓ ";color:#13794A}
+.who .card.no h3::before{content:"✗ ";color:#C0392B}
+.gift{background:var(--navy);color:#fff;border-radius:18px;padding:28px;display:flex;gap:20px;align-items:center}
+.gift .ico{font-size:46px}
+.gift h3{margin:0 0 6px;font-size:22px;color:var(--yellow)}
+.gift p{margin:0;color:#D7E0F3}
+.bio{display:grid;grid-template-columns:.7fr 1.3fr;gap:28px;align-items:center}
+.bio img{width:100%;border-radius:16px}
+.bio ul{padding-left:18px;color:var(--muted)}
+/* form */
+.form-sec{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff}
+.form-sec h2{color:#fff}
+.form-sec .lead{color:#D7E0F3}
+form{background:#fff;color:var(--ink);border-radius:18px;padding:26px;max-width:560px;display:grid;gap:14px}
+label{font-size:14px;font-weight:700;color:var(--navy)}
+input,select{width:100%;margin-top:6px;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:16px;background:#fff}
+input:focus,select:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+.small{font-size:12.5px;color:var(--muted)}
+form .btn{justify-content:center;width:100%}
+.ok-msg{display:none;background:#fff;color:var(--ink);border-radius:18px;padding:26px;max-width:560px}
+.ok-msg h3{margin:0 0 8px;color:var(--navy);font-size:22px}
+.btn.wa{background:var(--wa);color:#fff}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{font-weight:700;color:var(--navy);cursor:pointer}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{background:#0A1A3F;color:#AFC0E0;font-size:13px;padding:26px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{color:#fff}
+.sticky{display:none}
+@media(max-width:820px){
+ .hero .wrap,.bio,.who{grid-template-columns:1fr}
+ .hero h1{font-size:33px}
+ h2{font-size:26px}
+ .hero .photo{max-width:420px}
+ .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:20}
+ .sticky .btn{width:100%;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+ footer{padding-bottom:90px}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+<img src="assets/logo.jpg" alt="Aurora Capital, Escuela de Finanzas y Emprendimiento">
+<a class="btn wa-link" href="#">Reservar mi lugar</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<div>
+<span class="pill">MASTERCLASS GRATUITA · EN VIVO POR ZOOM</span>
+<h1>En 2 horas, aprende a saber si tu empresa <span>gana o solo factura</span></h1>
+<p class="sub">Para dueños de empresas que venden bien cada mes, pero no ven el dinero en sus cuentas. Aprende a controlar tu caja, calcular tus costos reales y tomar decisiones con números.</p>
+<ul class="facts">
+<li>🎓 100% gratuita</li><li>⏱ 2 horas</li><li>💻 En vivo por Zoom</li><li>🎁 Plantillas de regalo</li>
+</ul>
+<a class="btn wa-link" href="#">Quiero mi lugar gratis →</a>
+</div>
+<div class="photo">
+<img src="assets/fernando.jpg" alt="Eco. Fernando Nacimento">
+<div class="tag"><b>Eco. Fernando Nacimento</b><span>Economista colegiado · Más de 14 años asesorando empresas</span></div>
+</div>
+</div></section>
+
+<section class="pain"><div class="wrap">
+<h2>¿Te suena alguna de estas?</h2>
+<p class="lead">No es un problema de ventas. Es un problema de números.</p>
+<ul>
+<li>Tu empresa factura bien, pero a fin de mes la caja está apretada.</li>
+<li>Sabes cuánto vendes, pero no cuánto te queda de verdad.</li>
+<li>Pones precios mirando a la competencia, no a tus costos reales.</li>
+<li>No sabes qué local, línea o cliente te deja plata y cuál te la quita.</li>
+<li>Tomas decisiones grandes (créditos, inversiones, sucursales) por intuición.</li>
+</ul>
+</div></section>
+
+<section><div class="wrap">
+<h2>Lo que aprenderás en la masterclass</h2>
+<p class="lead">Con el Método 3C (Controla, Calcula, Crece) y herramientas que puedes aplicar desde el día siguiente.</p>
+<div class="grid">
+<div class="card"><div class="n">1</div><h3>Analizar la salud financiera de tu negocio</h3><p>Los números que te dicen si tu empresa gana o solo factura.</p></div>
+<div class="card"><div class="n">2</div><h3>Indicadores clave para decidir</h3><p>Margen bruto, operativo y neto: qué mirar cada mes y por qué.</p></div>
+<div class="card"><div class="n">3</div><h3>Mejorar utilidades y flujo de caja</h3><p>Cómo prever los meses difíciles y dejar de correr a fin de mes.</p></div>
+<div class="card"><div class="n">4</div><h3>Crecer de forma rentable</h3><p>Costos reales, precios y punto de equilibrio antes de invertir.</p></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="gift"><div class="ico">🎁</div><div>
+<h3>Regalo para todos los asistentes</h3>
+<p>Plantilla de flujo de caja y estado de resultados, lista para usar en tu empresa.</p>
+</div></div>
+</div></section>
+
+<section style="background:#fff"><div class="wrap">
+<h2>¿Para quién es?</h2>
+<p class="lead">Es una clase para empresarios que ya venden y quieren ordenar sus números para crecer.</p>
+<div class="who">
+<div class="card ok"><h3>Es para ti si…</h3><p>Tienes un negocio en marcha con ventas constantes, equipo o proveedores, y quieres saber con claridad cuánto ganas y dónde se va tu dinero.</p></div>
+<div class="card no"><h3>No es para ti si…</h3><p>Ya revisas cada mes tu margen neto, tu flujo de caja proyectado y tus costos por producto o local.</p></div>
+</div>
+</div></section>
+
+<section><div class="wrap bio">
+<img src="assets/fernando.jpg" alt="Fernando Nacimento">
+<div>
+<h2>Quién dicta la masterclass</h2>
+<p class="lead" style="margin-bottom:12px"><b>Eco. Fernando Nacimento</b>, director de Aurora Capital, Escuela de Finanzas y Emprendimiento.</p>
+<ul>
+<li>Economista colegiado, licenciado en Economía y Finanzas.</li>
+<li>Formación en la Universidad del Pacífico y la USIL; posgrado en Finanzas Corporativas (UNMSM); especialización en Evaluación de Proyectos de Inversión (UNI).</li>
+<li>Más de 14 años asesorando empresas de los sectores inmobiliario, hidrocarburos, agroindustria, servicios financieros y sector público.</li>
+</ul>
+</div>
+</div></section>
+
+<section class="form-sec" id="registro"><div class="wrap" style="text-align:center">
+<h2>Reserva tu lugar gratis</h2>
+<p class="lead" style="margin-left:auto;margin-right:auto">Únete al grupo de WhatsApp de la masterclass. Ahí te enviamos la fecha, la hora, el enlace de Zoom y tu plantilla de regalo.</p>
+<a class="btn wa wa-link" href="#">📲 Reservar mi lugar gratis en el grupo de WhatsApp</a>
+<p class="small" style="color:#AFC0E0;margin-top:14px">100% gratis · Sin tarjeta ni compromiso · <a href="privacidad.html" style="color:#fff">Política de privacidad</a></p>
+</div></section>
+
+<section><div class="wrap">
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Cuánto cuesta?</summary><p>Nada. La masterclass es 100% gratuita.</p></details>
+<details><summary>¿Dónde es y cuánto dura?</summary><p>Es en vivo por Zoom y dura 2 horas. Puedes conectarte desde tu computadora o tu celular.</p></details>
+<details><summary>¿Necesito saber de finanzas o contabilidad?</summary><p>No. Todo se explica con ejemplos de negocios reales y lenguaje simple.</p></details>
+<details><summary>¿Cómo recibo el acceso?</summary><p>Al hacer clic en "Reservar mi lugar", entras directo al grupo de WhatsApp de la masterclass. Ahí compartimos la fecha, la hora y el enlace de Zoom.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+<div>© Inversiones Comerciales La Aurora Capital SAC · RUC 20614075008</div>
+<div><a href="https://www.iclacapital.com">iclacapital.com</a> · <a href="privacidad.html">Política de privacidad</a></div>
+</div></footer>
+
+<div class="sticky"><a class="btn wa-link" href="#">Reservar mi lugar gratis</a></div>
+
+<script>
+// Enlace de invitación al grupo de WhatsApp
+const WA_GRUPO = "https://chat.whatsapp.com/Bd2TROPh60vJ0q01nkzjFs";
+document.querySelectorAll('.wa-link').forEach(a => {
+  a.href = WA_GRUPO;
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.addEventListener('click', () => {
+    // Evento de conversión para Meta: "Iniciar prueba" (StartTrial)
+    if (window.fbq) fbq('track', 'StartTrial', {value: 0, currency: 'PEN', content_name: 'Masterclass gratuita'});
+  });
+});
+</script>
+</body>
+</html>
