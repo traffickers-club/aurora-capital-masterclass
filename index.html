@@ -73,11 +73,12 @@ h2{font-size:32px;line-height:1.15;margin:0 0 10px;color:var(--navy);font-weight
 .form-sec .lead{color:#D7E0F3}
 form{background:#fff;color:var(--ink);border-radius:18px;padding:26px;max-width:560px;margin:0 auto;display:grid;gap:14px;text-align:left}
 label{font-size:14px;font-weight:700;color:var(--navy)}
-fieldset{border:0;margin:4px 0 0;padding:0;display:grid;gap:8px}
-legend{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px;padding:0}
-label.opt{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer}
-label.opt input{width:22px;height:22px;margin:0;flex:none;accent-color:var(--navy);cursor:pointer}
-label.opt:has(input:checked){border-color:var(--navy);background:#EEF2FA}
+/* pop up del formulario */
+dialog{border:0;padding:0;background:transparent;width:min(500px,calc(100% - 24px));max-height:calc(100% - 24px);overflow:auto}
+dialog::backdrop{background:rgba(6,16,40,.7)}
+dialog form,dialog .ok-msg{max-width:none}
+dialog h3{margin:0;color:var(--navy);font-size:22px;padding-right:28px}
+dialog .cerrar{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--bg);color:var(--navy);font-size:24px;line-height:1;cursor:pointer;z-index:1}
 .err{display:none;margin:0;background:#FDECEA;color:#A93226;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600}
 button.btn[disabled]{opacity:.7;cursor:wait}
 input,select{width:100%;margin-top:6px;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:16px;background:#fff}
@@ -183,41 +184,9 @@ footer a{color:#fff}
 
 <section class="form-sec" id="registro"><div class="wrap" style="text-align:center">
 <h2>Reserva tu lugar gratis</h2>
-<p class="lead" style="margin-left:auto;margin-right:auto">Completa tus datos y únete al grupo de WhatsApp de la masterclass. Ahí te enviamos la fecha, la hora, el enlace de Zoom y tu plantilla de regalo.</p>
-
-<form id="form-registro" novalidate>
-<label>Nombres y apellidos
-<input type="text" name="nombre" autocomplete="name" placeholder="Ej.: María Pérez Gómez" required></label>
-<label>Número de celular
-<input type="tel" name="celular" autocomplete="tel" inputmode="tel" placeholder="Ej.: 987 654 321" required></label>
-<label>¿En qué rubro está tu negocio?
-<input type="text" name="rubro" placeholder="Ej.: restaurante, construcción, ferretería…" required></label>
-
-<fieldset>
-<legend>🎯 ¿Qué problema te gustaría resolver hoy en tu negocio?</legend>
-<label class="opt"><span>Vendo bien, pero no sé cuánto gano de verdad</span><input type="radio" name="problema" value="Vendo bien, pero no sé cuánto gano de verdad" required></label>
-<label class="opt"><span>Mi caja siempre está apretada a fin de mes</span><input type="radio" name="problema" value="Mi caja siempre está apretada a fin de mes"></label>
-<label class="opt"><span>No sé qué producto, local o línea me deja ganancia</span><input type="radio" name="problema" value="No sé qué producto, local o línea me deja ganancia"></label>
-<label class="opt"><span>No sé si mis precios cubren mis costos reales</span><input type="radio" name="problema" value="No sé si mis precios cubren mis costos reales"></label>
-</fieldset>
-
-<fieldset>
-<legend>💼 ¿Cuánto factura tu negocio al mes, aproximadamente?</legend>
-<label class="opt"><span>Menos de S/ 30 mil</span><input type="radio" name="facturacion" value="Menos de S/ 30 mil" required></label>
-<label class="opt"><span>Entre S/ 30 mil y S/ 50 mil</span><input type="radio" name="facturacion" value="Entre S/ 30 mil y S/ 50 mil"></label>
-<label class="opt"><span>Más de S/ 50 mil</span><input type="radio" name="facturacion" value="Más de S/ 50 mil"></label>
-</fieldset>
-
-<p class="err" id="form-error" role="alert"></p>
-<button type="submit" class="btn">Quiero participar en la Masterclass</button>
-<p class="small" style="text-align:center;margin:0">100% gratis · Sin tarjeta ni compromiso · <a href="privacidad.html">Política de privacidad</a></p>
-</form>
-
-<div class="ok-msg" id="form-ok">
-<h3>¡Listo, ya tienes tu lugar! 🎉</h3>
-<p>Último paso: entra al grupo de WhatsApp de la masterclass. Ahí te enviamos la fecha, la hora, el enlace de Zoom y tu plantilla de regalo.</p>
-<a class="btn wa" id="wa-final" href="#" target="_blank" rel="noopener">📲 Entrar al grupo de WhatsApp</a>
-</div>
+<p class="lead" style="margin-left:auto;margin-right:auto">Déjanos tus datos y únete al grupo de WhatsApp de la masterclass. Ahí te enviamos la fecha, la hora, el enlace de Zoom y tu plantilla de regalo.</p>
+<a class="btn wa-link" href="#">Quiero participar en la Masterclass →</a>
+<p class="small" style="color:#AFC0E0;margin-top:14px">100% gratis · Sin tarjeta ni compromiso · <a href="privacidad.html" style="color:#fff">Política de privacidad</a></p>
 </div></section>
 
 <section><div class="wrap">
@@ -235,6 +204,28 @@ footer a{color:#fff}
 
 <div class="sticky"><a class="btn wa-link" href="#">Reservar mi lugar gratis</a></div>
 
+<dialog id="modal-registro" aria-labelledby="modal-titulo">
+<button type="button" class="cerrar" aria-label="Cerrar">×</button>
+<form id="form-registro" novalidate>
+<h3 id="modal-titulo">Reserva tu lugar gratis</h3>
+<p class="small" style="margin:-8px 0 0">Completa tus datos y te llevamos al grupo de WhatsApp de la masterclass.</p>
+<label>Nombres y apellidos
+<input type="text" name="nombre" autocomplete="name" placeholder="Ej.: María Pérez Gómez" required autofocus></label>
+<label>WhatsApp
+<input type="tel" name="celular" autocomplete="tel" inputmode="tel" placeholder="Ej.: 987 654 321" required></label>
+<label>¿En qué rubro está tu negocio?
+<input type="text" name="rubro" placeholder="Ej.: restaurante, construcción, ferretería…" required></label>
+<p class="err" id="form-error" role="alert"></p>
+<button type="submit" class="btn">Quiero participar en la Masterclass</button>
+<p class="small" style="text-align:center;margin:0">100% gratis · Sin tarjeta ni compromiso · <a href="privacidad.html">Política de privacidad</a></p>
+</form>
+<div class="ok-msg" id="form-ok">
+<h3>¡Listo, ya tienes tu lugar! 🎉</h3>
+<p>Último paso: entra al grupo de WhatsApp de la masterclass. Ahí te enviamos la fecha, la hora, el enlace de Zoom y tu plantilla de regalo.</p>
+<a class="btn wa" id="wa-final" href="#" target="_blank" rel="noopener">📲 Entrar al grupo de WhatsApp</a>
+</div>
+</dialog>
+
 <script>
 // Enlace de invitación al grupo de WhatsApp
 const WA_GRUPO = "https://chat.whatsapp.com/EAc3jeUAl3W4kp4mUkDclb";
@@ -251,8 +242,14 @@ if (UTM_KEYS.some(k => utmUrl.get(k))) {
   try { localStorage.setItem('aurora_utms', JSON.stringify(utms)); } catch (err) {}
 }
 
-// Los botones de la página llevan al formulario
-document.querySelectorAll('.wa-link').forEach(a => { a.href = "#registro"; });
+// Los botones de la página abren el formulario en un pop up
+const modal = document.getElementById('modal-registro');
+document.querySelectorAll('.wa-link').forEach(a => {
+  a.href = "#registro";
+  a.addEventListener('click', e => { e.preventDefault(); modal.showModal(); });
+});
+modal.querySelector('.cerrar').addEventListener('click', () => modal.close());
+modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
 
 // En celular, el botón fijo se oculta mientras el formulario está en pantalla
 const sticky = document.querySelector('.sticky');
@@ -268,9 +265,7 @@ form.addEventListener('submit', async e => {
   const d = Object.fromEntries(new FormData(form));
   const celular = (d.celular || '').replace(/\D/g, '');
   if (!(d.nombre || '').trim() || !(d.rubro || '').trim()) return showError('Completa tu nombre y el rubro de tu negocio.');
-  if (celular.length < 9 || celular.length > 12) return showError('Escribe un número de celular válido (9 dígitos).');
-  if (!d.problema) return showError('Elige el problema que te gustaría resolver.');
-  if (!d.facturacion) return showError('Elige cuánto factura tu negocio al mes.');
+  if (celular.length < 9 || celular.length > 12) return showError('Escribe un número de WhatsApp válido (9 dígitos).');
   showError('');
 
   const btn = form.querySelector('button');
@@ -279,7 +274,6 @@ form.addEventListener('submit', async e => {
 
   const datos = new URLSearchParams({
     nombre: d.nombre.trim(), celular, rubro: d.rubro.trim(),
-    problema: d.problema, facturacion: d.facturacion,
     ...Object.fromEntries(UTM_KEYS.map(k => [k, utms[k] || '']))
   });
   try {
@@ -293,7 +287,6 @@ form.addEventListener('submit', async e => {
   const ok = document.getElementById('form-ok');
   document.getElementById('wa-final').href = WA_GRUPO;
   ok.style.display = 'block';
-  ok.scrollIntoView({behavior: 'smooth', block: 'center'});
   setTimeout(() => { location.href = WA_GRUPO; }, 2500);
 });
 </script>
